@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <cstdlib>
 
 // Make code easier to type with "using namespace"
 using namespace sf;
@@ -49,7 +50,7 @@ int main()
                     else if(points.size() == 0)
                     {
                         ///fourth click
-                        ///push back to points vector
+                        points.push_back(Vector2f(event.mouseButton.x, event.mouseButton.y));
                     }
                 }
             }
@@ -70,6 +71,29 @@ int main()
             ///select random vertex
             ///calculate midpoint between random vertex and the last point in the vector
             ///push back the newly generated coord.
+            int vertice_point = rand() % 3;
+            int size_points = points.size() - 1;
+            float point_x, point_y;
+
+            if(vertice_point == 0)
+            {
+                point_x = (vertices[vertice_point].x + points[size_points].x) / 2;
+                point_x = (vertices[vertice_point].y + points[size_points].y) / 2;
+            }
+
+            if(vertice_point == 1)
+            {
+                point_x = (vertices[vertice_point].x + points[size_points].x) / 2;
+                point_x = (vertices[vertice_point].y + points[size_points].y) / 2;
+            }
+
+            if(vertice_point == 2)
+            {
+                point_x = (vertices[vertice_point].x + points[size_points].x) / 2;
+                point_x = (vertices[vertice_point].y + points[size_points].y) / 2;
+            }
+
+            points.push_back(Vector2f(point_x, point_y));
         }
 
         /*
@@ -85,6 +109,15 @@ int main()
             rect.setFillColor(Color::Blue);
             window.draw(rect);
         }
+
+        for(int j = 0; j < points.size(); j++)
+        {
+            RectangleShape rect(Vector2f(10,10));
+            rect.setPosition(Vector2f(points[j].x, points[j].y));
+            rect.setFillColor(Color::Blue);
+            window.draw(rect);
+        }
+
         window.display();
     }
 }
