@@ -73,24 +73,25 @@ int main()
             ///push back the newly generated coord.
             int vertice_point = rand() % 3;
             int size_points = points.size() - 1;
+            
             float point_x, point_y;
 
             if(vertice_point == 0)
             {
                 point_x = (vertices[vertice_point].x + points[size_points].x) / 2;
-                point_x = (vertices[vertice_point].y + points[size_points].y) / 2;
+                point_y = (vertices[vertice_point].y + points[size_points].y) / 2;
             }
 
             if(vertice_point == 1)
             {
                 point_x = (vertices[vertice_point].x + points[size_points].x) / 2;
-                point_x = (vertices[vertice_point].y + points[size_points].y) / 2;
+                point_y = (vertices[vertice_point].y + points[size_points].y) / 2;
             }
 
             if(vertice_point == 2)
             {
                 point_x = (vertices[vertice_point].x + points[size_points].x) / 2;
-                point_x = (vertices[vertice_point].y + points[size_points].y) / 2;
+                point_y = (vertices[vertice_point].y + points[size_points].y) / 2;
             }
 
             points.push_back(Vector2f(point_x, point_y));
