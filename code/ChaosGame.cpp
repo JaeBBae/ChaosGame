@@ -105,7 +105,7 @@ int main()
         window.clear();
         for(int i = 0; i < vertices.size(); i++)
         {
-            RectangleShape rect(Vector2f(10,10));
+            RectangleShape rect(Vector2f(3,3));
             rect.setPosition(Vector2f(vertices[i].x, vertices[i].y));
             rect.setFillColor(Color::Blue);
             window.draw(rect);
@@ -113,7 +113,7 @@ int main()
 
         for(int j = 0; j < points.size(); j++)
         {
-            RectangleShape rect(Vector2f(10,10));
+            RectangleShape rect(Vector2f(3,3));
             rect.setPosition(Vector2f(points[j].x, points[j].y));
             rect.setFillColor(Color::Blue);
             window.draw(rect);
